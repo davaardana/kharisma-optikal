@@ -21,7 +21,7 @@ declare global {
   }
 }
 
-type ImageKey = 'img1' | 'img2' | 'img3' | 'img4' | 'img5' | 'img6';
+type ImageKey = 'img1' | 'img2' | 'img3' | 'img4' | 'img5' | 'img6' | 'lensCustom';
 
 const imageFallbackMap: Record<ImageKey, string> = {
   img1,
@@ -30,6 +30,7 @@ const imageFallbackMap: Record<ImageKey, string> = {
   img4,
   img5,
   img6,
+  lensCustom: '/optimized/lens-custom-768.webp',
 };
 
 const imageWebpSetMap: Record<ImageKey, string> = {
@@ -39,6 +40,7 @@ const imageWebpSetMap: Record<ImageKey, string> = {
   img4: '/optimized/img4-640.webp 640w, /optimized/img4-960.webp 960w, /optimized/img4-1280.webp 1280w',
   img5: '/optimized/img5-640.webp 640w, /optimized/img5-960.webp 960w, /optimized/img5-1280.webp 1280w',
   img6: '/optimized/img6-640.webp 640w, /optimized/img6-960.webp 960w, /optimized/img6-1280.webp 1280w',
+  lensCustom: '/optimized/lens-custom-480.webp 480w, /optimized/lens-custom-768.webp 768w, /optimized/lens-custom-1024.webp 1024w',
 };
 
 type ResponsiveImageProps = {
@@ -113,7 +115,7 @@ const lensData: LensItem[] = [
     title: 'Lensa Anti-Radiasi',
     subtitle: 'Digital Comfort Shield',
     description: 'Ideal untuk pengguna laptop dan smartphone dengan paparan layar tinggi.',
-    image: 'img1',
+    image: 'lensCustom',
     badge: 'Trending',
     details:
       'Lensa anti-radiasi membantu menurunkan silau dari layar digital dan lampu malam. Cocok untuk pekerja kantor, gamer, dan pelajar.',
@@ -122,7 +124,7 @@ const lensData: LensItem[] = [
     title: 'Lensa Bluechromic',
     subtitle: 'Dual Blue + UV Protection',
     description: 'Proteksi cahaya biru dan UV dalam satu lensa premium yang adaptif.',
-    image: 'img3',
+    image: 'lensCustom',
     badge: 'Premium Choice',
     details:
       'Kombinasi fitur anti blue light dan photochromic. Dirancang untuk kenyamanan visual maksimal sepanjang hari.',
@@ -131,7 +133,7 @@ const lensData: LensItem[] = [
     title: 'Lensa Photochromic',
     subtitle: 'Adaptive UV Response',
     description: 'Bening di dalam ruangan, otomatis gelap saat terkena UV di luar ruangan.',
-    image: 'img2',
+    image: 'lensCustom',
     badge: 'Smart Outdoor',
     details:
       'Pilihan praktis untuk pengguna aktif. Satu kacamata untuk indoor dan outdoor tanpa perlu ganti lensa sunglasses terpisah.',
