@@ -491,12 +491,19 @@ export default function KharismaOptikal() {
               <h2 className="mt-3 text-4xl font-semibold text-slate-100 md:text-5xl">Flowbite Style Lens Cards</h2>
             </div>
 
-            <div className="mx-auto mb-14 h-[440px] w-full max-w-6xl overflow-hidden rounded-2xl border border-blue-300/20 bg-slate-900/50 sm:h-[500px]">
+            <div
+              className={`mx-auto mb-14 w-full max-w-6xl overflow-hidden rounded-2xl border border-blue-300/20 bg-slate-900/50 ${
+                isLightMode ? 'h-auto' : 'h-[440px] sm:h-[500px]'
+              }`}
+            >
               {isLightMode ? (
-                <div className="grid h-full w-full gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid w-full gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3">
                   {galleryItems.slice(0, 6).map((item) => (
-                    <article key={item.text} className="overflow-hidden rounded-lg border border-blue-300/20 bg-slate-900/80">
-                      <ResponsiveImage imageKey={item.imageKey} alt={item.text} className="h-[78%] w-full object-cover" />
+                    <article
+                      key={item.text}
+                      className="overflow-hidden rounded-lg border border-blue-300/20 bg-slate-900/80"
+                    >
+                      <ResponsiveImage imageKey={item.imageKey} alt={item.text} className="h-44 w-full object-cover sm:h-48" />
                       <p className="px-3 py-2 text-sm tracking-wide text-blue-100">{item.text}</p>
                     </article>
                   ))}
