@@ -283,6 +283,20 @@ export default function KharismaOptikal() {
     href: `#${item.id}`,
   }));
 
+  const isThemeLight = theme === 'light';
+  const heroTopTextClass = isThemeLight ? 'text-blue-900' : 'text-blue-300';
+  const heroTitleTextClass = isThemeLight ? 'text-slate-900' : 'text-slate-100';
+  const heroTypingTextClass = isThemeLight ? 'text-blue-950/85' : 'text-blue-100/45';
+  const heroBodyTextClass = isThemeLight ? 'text-slate-800/95' : 'text-slate-200/85';
+  const heroSupportTextClass = isThemeLight ? 'text-blue-900' : 'text-blue-100';
+  const heroSupportLabelClass = isThemeLight ? 'text-blue-900/95' : 'text-blue-100/85';
+  const heroPrimaryBtnClass = isThemeLight
+    ? 'rounded-md border border-blue-700/70 bg-blue-100 px-6 py-3 text-xs uppercase tracking-[0.2em] text-blue-900 transition hover:-translate-y-0.5 hover:bg-blue-200'
+    : 'rounded-md border border-blue-400/60 bg-blue-500/10 px-6 py-3 text-xs uppercase tracking-[0.2em] text-blue-100 transition hover:-translate-y-0.5 hover:bg-blue-500/25';
+  const heroSecondaryBtnClass = isThemeLight
+    ? 'rounded-md border border-slate-500/40 bg-white/80 px-6 py-3 text-xs uppercase tracking-[0.2em] text-slate-800 transition hover:border-blue-700/40 hover:text-blue-900'
+    : 'rounded-md border border-slate-400/30 bg-slate-900/60 px-6 py-3 text-xs uppercase tracking-[0.2em] text-slate-200 transition hover:border-blue-300/40 hover:text-blue-100';
+
   return (
     <div
       className={`relative min-h-screen overflow-x-hidden ${
@@ -343,7 +357,7 @@ export default function KharismaOptikal() {
           <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-slate-950/35 via-slate-950/15 to-slate-950/55" />
 
           <div ref={heroContainerRef} className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
-            <div className="hero-fade mb-6 text-blue-300">
+            <div className={`hero-fade mb-6 ${heroTopTextClass}`}>
               <VariableProximity
                 label="Kesehatan Mata Profesional"
                 className="text-[11px] uppercase tracking-[0.55em]"
@@ -354,7 +368,7 @@ export default function KharismaOptikal() {
                 falloff="gaussian"
               />
             </div>
-            <div className="hero-fade text-slate-100">
+            <div className={`hero-fade ${heroTitleTextClass}`}>
               <VariableProximity
                 label="Look Stylish"
                 className="text-5xl font-semibold leading-[0.95] sm:text-6xl md:text-7xl"
@@ -369,7 +383,7 @@ export default function KharismaOptikal() {
               <TextType
                 text="with Kharisma Optikal"
                 as="h2"
-                className="typed-3d text-4xl font-medium leading-[1.05] text-blue-100/45 sm:text-5xl md:text-6xl"
+                className={`typed-3d text-4xl font-medium leading-[1.05] sm:text-5xl md:text-6xl ${heroTypingTextClass}`}
                 typingSpeed={72}
                 pauseDuration={3000}
                 deletingSpeed={38}
@@ -381,7 +395,7 @@ export default function KharismaOptikal() {
             <div className="hero-fade my-4">
               <GlassesLogo />
             </div>
-            <div className="hero-fade mt-4 max-w-5xl text-slate-200/85">
+            <div className={`hero-fade mt-4 max-w-5xl ${heroBodyTextClass}`}>
               <VariableProximity
                 label="Penglihatan bukan sekadar kemampuan melihat. Di Kharisma Optikal, kami menyatukan akurasi klinis dan estetika modern agar kamu terlihat rapi, elegan, dan tetap nyaman sepanjang hari, baik untuk aktivitas profesional, perjalanan, maupun gaya hidup digital yang dinamis."
                 className="text-base leading-8 sm:text-lg md:text-[1.2rem] md:leading-9"
@@ -392,10 +406,10 @@ export default function KharismaOptikal() {
                 falloff="gaussian"
               />
             </div>
-            <div className="hero-fade mt-4 text-blue-100">
+            <div className={`hero-fade mt-4 ${heroSupportTextClass}`}>
               <VariableProximity
                 label="Pilih frame yang tepat, tampil percaya diri setiap hari."
-                className="text-sm tracking-[0.08em] text-blue-100/85 sm:text-base"
+                className={`text-sm tracking-[0.08em] sm:text-base ${heroSupportLabelClass}`}
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
                 toFontVariationSettings="'wght' 900, 'opsz' 30"
                 containerRef={heroContainerRef}
@@ -406,13 +420,13 @@ export default function KharismaOptikal() {
             <div className="hero-fade mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="#layanan"
-                className="rounded-md border border-blue-400/60 bg-blue-500/10 px-6 py-3 text-xs uppercase tracking-[0.2em] text-blue-100 transition hover:-translate-y-0.5 hover:bg-blue-500/25"
+                className={heroPrimaryBtnClass}
               >
                 Layanan Kami
               </a>
               <a
                 href="#tentang"
-                className="rounded-md border border-slate-400/30 bg-slate-900/60 px-6 py-3 text-xs uppercase tracking-[0.2em] text-slate-200 transition hover:border-blue-300/40 hover:text-blue-100"
+                className={heroSecondaryBtnClass}
               >
                 Tentang Kami
               </a>
