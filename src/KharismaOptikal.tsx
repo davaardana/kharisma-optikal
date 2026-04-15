@@ -121,15 +121,6 @@ const lensData: LensItem[] = [
       'Lensa anti-radiasi membantu menurunkan silau dari layar digital dan lampu malam. Cocok untuk pekerja kantor, gamer, dan pelajar.',
   },
   {
-    title: 'Lensa Bluechromic',
-    subtitle: 'Dual Blue + UV Protection',
-    description: 'Proteksi cahaya biru dan UV dalam satu lensa premium yang adaptif.',
-    image: 'lensCustom',
-    badge: 'Premium Choice',
-    details:
-      'Kombinasi fitur anti blue light dan photochromic. Dirancang untuk kenyamanan visual maksimal sepanjang hari.',
-  },
-  {
     title: 'Lensa Photochromic',
     subtitle: 'Adaptive UV Response',
     description: 'Bening di dalam ruangan, otomatis gelap saat terkena UV di luar ruangan.',
@@ -137,6 +128,15 @@ const lensData: LensItem[] = [
     badge: 'Smart Outdoor',
     details:
       'Pilihan praktis untuk pengguna aktif. Satu kacamata untuk indoor dan outdoor tanpa perlu ganti lensa sunglasses terpisah.',
+  },
+  {
+    title: 'Lensa Bluechromic',
+    subtitle: 'Dual Blue + UV Protection',
+    description: 'Proteksi cahaya biru dan UV dalam satu lensa premium yang adaptif.',
+    image: 'lensCustom',
+    badge: 'Premium Choice',
+    details:
+      'Kombinasi fitur anti blue light dan photochromic. Dirancang untuk kenyamanan visual maksimal sepanjang hari.',
   },
 ];
 
@@ -517,13 +517,11 @@ export default function KharismaOptikal() {
               )}
             </div>
 
-            <div className="mx-auto grid max-w-5xl place-items-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mx-auto grid w-full max-w-7xl place-items-center gap-8 md:grid-cols-2 xl:grid-cols-3">
               {lensData.map((lens, index) => (
                 <article
                   key={lens.title}
-                  className={`block w-full max-w-sm overflow-hidden rounded-xl border border-blue-200/20 bg-slate-900/85 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/25 ${
-                    lens.title === 'Lensa Bluechromic' ? 'md:col-span-2 md:max-w-md xl:col-span-1 xl:max-w-sm' : ''
-                  }`}
+                  className="block w-full max-w-sm overflow-hidden rounded-xl border border-blue-200/20 bg-slate-900/85 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/25"
                 >
                   <ResponsiveImage imageKey={lens.image} alt={lens.title} className="h-52 w-full object-cover" />
                   <div className="p-6 text-center">
